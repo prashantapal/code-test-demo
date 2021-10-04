@@ -14,7 +14,7 @@ public class Customer implements Serializable {
     @Column(name = "customer_name", nullable = false)
     private String customerName;
     @Column(name = "loan_amount", nullable = false)
-    private Long loanAmount;
+    private double loanAmount;
     @Column(name = "interest", nullable = false)
     private double interest;
     @Column(name = "years", nullable = false)
@@ -24,7 +24,7 @@ public class Customer implements Serializable {
         super();
     }
 
-    public Customer(Long customerId, String customerName, Long loanAmount, double interest, int years) {
+    public Customer(Long customerId, String customerName, double loanAmount, double interest, int years) {
         this.customerId = customerId;
         this.customerName = customerName;
         this.loanAmount = loanAmount;
@@ -48,11 +48,11 @@ public class Customer implements Serializable {
         this.customerName = customerName;
     }
 
-    public Long getLoanAmount() {
+    public double getLoanAmount() {
         return loanAmount;
     }
 
-    public void setLoanAmount(Long loanAmount) {
+    public void setLoanAmount(double loanAmount) {
         this.loanAmount = loanAmount;
     }
 

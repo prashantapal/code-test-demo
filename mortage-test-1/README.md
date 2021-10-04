@@ -24,11 +24,11 @@ Prospect 1: CustomerName wants to borrow X € for a period of Z years and pay E
    - One way is, open the project in IDE and run the class `MortageTest1Application`.
    - or, after maven build, run `java -jar target/mortage-test-1-1.0-SNAPSHOT.jar`.
    - or, after maven build, run `mvn spring-boot:run`.
-   - Please note, the prospect file has been added in the resources folder, if you would like to supply the prospect file at run time, you can give the absolute file path as below.
+   - Please note, the prospect file has been added in the [resources](https://github.com/prashantapal/code-test-demo/tree/master/mortage-test-1/src/main/resources) folder, if you would like to supply the prospect file at run time, you can give the absolute file path as below.
      `java -Dprospect.file.absolutepath=<absolute file path> -jar target/mortage-test-1-1.0-SNAPSHOT.jar`
 
 - ##### IDE
-  - Import the [mortage test 1](https://github.com/prashantapal/code-test-demo/mortage-test-1) directory as Maven project using projects root 'pom.xml'.
+  - Import the [mortage test 1](https://github.com/prashantapal/code-test-demo/tree/master/mortage-test-1) directory as Maven project using projects root 'pom.xml'.
 
 - ##### Code style
   - No tab characters

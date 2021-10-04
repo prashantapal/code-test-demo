@@ -1,7 +1,7 @@
 package com.moneybin.mortage.mortagetest1;
 
 import com.moneybin.mortage.mortagetest1.service.FileService;
-import com.moneybin.mortage.mortagetest1.service.MonthlyInstalmentCalculator;
+import com.moneybin.mortage.mortagetest1.service.MonthlyInstallmentCalculator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -21,11 +21,11 @@ public class MortageTest1Application {
 	}
 
 	private static void startCalculating(ApplicationContext applicationContext) {
-		MonthlyInstalmentCalculator instalmentCalculator = applicationContext.getBean(MonthlyInstalmentCalculator.class);
+		MonthlyInstallmentCalculator installmentCalculator = applicationContext.getBean(MonthlyInstallmentCalculator.class);
 		FileService fileService = applicationContext.getBean(FileService.class);
 		fileService.readProspectFile()
 				.stream()
-				.map(instalmentCalculator::calculate)
+				.map(installmentCalculator::calculate)
 				.filter(Optional::isPresent)
 				.map(Optional::get)
 				.forEach(logger::info);

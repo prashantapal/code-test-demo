@@ -13,11 +13,11 @@ import static java.util.Arrays.asList;
 import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
 @Service
-public class MonthlyInstalmentCalculatorImpl implements MonthlyInstalmentCalculator {
+public class MonthlyInstallmentCalculatorImpl implements MonthlyInstallmentCalculator {
 
     private static final String COMMA_DELIMITER = ",";
     private static final String DOUBLE_QUOTE = "\"";
-    private static Logger logger = LoggerFactory.getLogger(MonthlyInstalmentCalculatorImpl.class);
+    private static Logger logger = LoggerFactory.getLogger(MonthlyInstallmentCalculatorImpl.class);
 
     @Override
     public Optional<String> calculate(String eachLine) {
@@ -45,14 +45,13 @@ public class MonthlyInstalmentCalculatorImpl implements MonthlyInstalmentCalcula
     private String calculateInstalment(String line) {
         final List<String> prospect = parseLine(line);
         try {
-
             final double loanAmount = Double.valueOf(prospect.get(1));
             final double monthlyInterest = Double.valueOf(prospect.get(2)) / 100 / 12;
             final int months = Integer.valueOf(prospect.get(3)) * 12;
             final double emi = (loanAmount * monthlyInterest) / (1 - power(1 + monthlyInterest, -months));
             return prospect.get(0) + " wants to borrow " + loanAmount + " € for a period of " + prospect.get(3) + " years and pay " + emi + " € each month";
         } catch (Exception ex) {
-            logger.error("Error occurred while calculating monthly instalment: " + line, ex);
+            logger.error("Error occurred while calculating monthly installment: " + line, ex);
             return null;
         }
     }

@@ -21,8 +21,8 @@ In extension to [mortage test 1](https://github.com/prashantapal/code-test-demo/
 - ##### Inmemory H2 database
 
    - H2 console: `http://localhost:8080/console`
-   - Jdbc Url: jdbc:h2:mem:testdb
-   - User name: sa
+   - Jdbc Url: `jdbc:h2:mem:testdb`
+   - User name: `sa`
    - Password: <blank>
    - Table name: [Customer](https://github.com/prashantapal/code-test-demo/tree/master/mortage-test-2/src/main/resources/schema.sql)
    - Initial configuration: [here](https://github.com/prashantapal/code-test-demo/tree/master/mortage-test-2/src/main/resources/data.sql)
